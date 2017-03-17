@@ -6,14 +6,16 @@ import {Component} from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    title = 'My First Angular 2 App';
-
-    private username: string = 'Test';
     private currentUser: User = {username: 'Test', email: 'test@test.com'};
+    private hideEmail: boolean = false;
+    private disabledInput: boolean = false;
 
-    private getUsername(): string {
-        return this.currentUser.username;
+    private isDisabled(): boolean {
+        return this.disabledInput;
     }
+
+    private isBlueBg: boolean = true;
+    private bgColor: string = 'red';
 }
 
 interface User {

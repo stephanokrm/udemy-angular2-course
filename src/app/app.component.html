@@ -1,15 +1,18 @@
-<h1>{{title}}</h1>
+<h1>My First Angular 2 App</h1>
 
-<p>This is just ordinary HTML paragraph</p>
+<div>
+    <p>Hello, {{currentUser.username}}!</p>
 
-<p>Result of 1 + 1 is {{ 1 + 1 }}</p>
+    <p [hidden]="hideEmail">Your email is: <em>{{currentUser.email}}</em></p>
+</div>
 
-<p>Hello, {{username}}!</p>
+<input [disabled]="disabledInput" type="text" placeholder="Enter your text">
 
-<p>Hello, {{currentUser.username}} - {{currentUser.email}}</p>
+<input [disabled]="isDisabled()" type="text" placeholder="Enter your text">
 
-<p>Hello, {{currentUser.username + ' - ' + currentUser.email}}</p>
+<input [disabled]="isDisabled()" type="text" [value]="currentUser.username" placeholder="Enter your text">
 
-<p>Hello, {{getUsername()}}</p>
+<input [class.blue-bg]="isBlueBg" type="text" placeholder="Enter your text">
 
-<input value="{{getUsername()}}" type="text">
+<input [style.background-color]="bgColor" type="text" placeholder="Enter your text">
+
