@@ -15,7 +15,7 @@ export class AppComponent {
     }
 
     private isBlueBg: boolean = true;
-    private bgColor: string = 'red';
+    private bgColor: string = 'grey';
 }
 
 interface User {
