@@ -8,14 +8,10 @@ import {Component} from '@angular/core';
 export class AppComponent {
     private currentUser: User = {username: 'Test', email: 'test@test.com'};
     private hideEmail: boolean = false;
-    private disabledInput: boolean = false;
 
-    private isDisabled(): boolean {
-        return this.disabledInput;
+    private toggle() {
+        this.hideEmail = !this.hideEmail;
     }
-
-    private isBlueBg: boolean = true;
-    private bgColor: string = 'grey';
 }
 
 interface User {
