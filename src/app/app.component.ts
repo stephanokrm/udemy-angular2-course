@@ -12,6 +12,17 @@ export class AppComponent {
     private toggle() {
         this.hideEmail = !this.hideEmail;
     }
+
+    private changeMail(newMail: string) {
+        this.currentUser.email = newMail;
+    }
+
+    private keyPress(event: KeyboardEvent) {
+        if (event.keyCode == 13) {
+            var inputElement = <HTMLInputElement>event.target;
+            this.changeMail(inputElement.value);
+        }
+    }
 }
 
 interface User {
