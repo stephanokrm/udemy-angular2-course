@@ -2,7 +2,7 @@
 
 <div>
     <h2>Your accounts</h2>
-    <p *ngIf="!_accounts || _accounts.length == 0">You don't have any accounts yet. Please</p>
+    <p *ngIf="_accounts.length == 0">You don't have any accounts yet. Please add it.</p>
 
     <div *ngFor="let acc of _accounts, let i = index">
         <h3>{{acc.title}} ({{acc.id}})</h3>
@@ -26,7 +26,7 @@
     </div>
 
     <div>
-        <label>Balance:</label>
+        <label for="bal">Balance:</label>
         <input id="bal" type="number" name="bal" value="0" #balance>
     </div>
 
