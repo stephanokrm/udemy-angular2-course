@@ -24,7 +24,7 @@
     </div>
 
     <div class="row">
-        <form class="col-md-6 col-sm-9">
+        <form class="col-md-6">
             <h3>Add new account</h3>
             <div class="form-group">
                 <label for="title">Title:</label>
@@ -41,8 +41,8 @@
                 <input class="form-control" id="bal" type="number" name="bal" value="0" #balance>
             </div>
 
-            <div>
-                <button (click)="createAcc(title,desc,balance)">Create</button>
+            <div class="form-group">
+                <button class="btn btn-success" (click)="createAcc(title,desc,balance)">Create</button>
             </div>
         </form>
     </div>
