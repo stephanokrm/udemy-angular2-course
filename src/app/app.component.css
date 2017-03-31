@@ -15,3 +15,7 @@
 .acc > * {
     margin: 4px;
 }
+
+.selected {
+    background-color: #45EE50;
+}
