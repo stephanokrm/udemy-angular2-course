@@ -8,20 +8,6 @@ import {Account} from '../account';
 })
 export class AccountListComponent {
     private _selected: Array<boolean> = [false, false];
-    private _accounts: Array<Account> = [
-        {
-            id: 1,
-            title: 'Bank Xyz',
-            description: 'This is my main bank account.',
-            balance: 501.2
-        },
-        {
-            id: 2,
-            title: 'yyy Bank',
-            description: null,
-            balance: 322
-        }
-    ];
 
     private removeAcc(index: number): void {
         this._accounts.splice(index, 1);

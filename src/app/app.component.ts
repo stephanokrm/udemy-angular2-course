@@ -6,6 +6,21 @@ import {Component} from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+    private _accounts: Array<Account> = [
+        {
+            id: 1,
+            title: 'Bank Xyz',
+            description: 'This is my main bank account.',
+            balance: 501.2
+        },
+        {
+            id: 2,
+            title: 'yyy Bank',
+            description: null,
+            balance: 322
+        }
+    ];
+
     private _nextId = 3;
 
     private createAcc(titleEl: any, descEl: any, balEl: any): void {
