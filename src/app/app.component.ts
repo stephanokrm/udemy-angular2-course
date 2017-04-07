@@ -23,7 +23,7 @@ export class AppComponent {
             balance: 322
         }
     ];
-    
+
     private createAcc(titleEl: any, descEl: any, balEl: any): void {
         this._accounts.push(new Account(this._nextId, titleEl.value, descEl.value, balEl.value));
         this._selected.push(false);
