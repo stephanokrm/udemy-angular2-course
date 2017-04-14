@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Account} from '../account';
 
 @Component({
@@ -7,14 +7,10 @@ import {Account} from '../account';
     styleUrls: ['./account-list.component.css']
 })
 export class AccountListComponent {
-    private _selected: Array<boolean> = [false, false];
+
+    @Input('accounts') _accounts: Array<Account>;
 
     private removeAcc(index: number): void {
         this._accounts.splice(index, 1);
-        this._selected.splice(index, 1);
-    }
-
-    private select(index: number): void {
-        this._selected[index] = !this._selected[index];
     }
 }
