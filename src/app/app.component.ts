@@ -33,4 +33,8 @@ export class AppComponent {
         descEl.value = '';
         balEl.value = 0;
     }
+
+    private removeAcc(index: number): void {
+        this._accounts.splice(index, 1);
+    }
 }
