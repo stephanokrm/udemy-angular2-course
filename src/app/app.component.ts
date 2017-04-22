@@ -8,26 +8,39 @@ import {AccountListComponent} from './account/account-list/account-list.componen
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    accounts: Array<Account> = [
-        {
-            id: 1,
-            title: 'xxx Bank',
-            description: 'Main bank account.',
-            balance: 567
-        },
-        {
-            id: 2,
-            title: 'yyy Bank',
-            description: null,
-            balance: 322
-        }
-    ];
+    private accounts: Array<Account>;
+    private accountLimit: number;
+    private createAccountError: string;
+    private nextId: number;
 
-    private nextId = 3;
+    constructor() {
+        this.accounts = [
+            {
+                id: 1,
+                title: 'xxx Bank',
+                description: 'Main bank account.',
+                balance: 567
+            },
+            {
+                id: 2,
+                title: 'yyy Bank',
+                description: null,
+                balance: 322
+            }
+        ];
+
+        this.nextId = 3;
+        this.accountLimit = 3;
+        this.createAccountError = '';
+    }
 
     private storeAccount(account: Account): void {
-        account.id = this.nextId++;
-        this.accounts.push(account);
+        if (this.accounts.length < this.accountLimit) {
+            account.id = this.nextId++;
+            this.accounts.push(account);
+        } else {
+            this.createAccountError = 'Only ' + this.accountLimit + ' account(s) allowed.';
+        }
     }
 
     private destroyAccount(index: number): void {

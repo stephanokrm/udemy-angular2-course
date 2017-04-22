@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Account} from '../account';
 
 @Component({
@@ -7,7 +7,7 @@ import {Account} from '../account';
     styleUrls: ['./account-form.component.css']
 })
 export class AccountFormComponent {
-
+    @Input() error: string;
     @Output() store = new EventEmitter<Account>();
 
     private _store(title: any, description: any, balance: any) {

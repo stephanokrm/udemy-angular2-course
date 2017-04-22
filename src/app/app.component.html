@@ -1,6 +1,22 @@
 <div class="container">
-    <h1>Personal finance</h1>
-    <h2>Your accounts</h2>
-    <app-account-list [accounts]="accounts" (destroy)="destroyAccount($event)"></app-account-list>
-    <app-account-form [error]="createAccountError" (store)="storeAccount($event)"></app-account-form>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h1>Personal finance</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h2>Your accounts</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <app-account-list [accounts]="accounts" (destroy)="destroyAccount($event)"></app-account-list>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 offset-md-3 offset-lg-4">
+            <app-account-form [error]="createAccountError" (store)="storeAccount($event)"></app-account-form>
+        </div>
+    </div>
 </div>
