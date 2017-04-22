@@ -7,10 +7,13 @@ import {Account} from '../account';
     styleUrls: ['./account-list.component.css']
 })
 export class AccountListComponent {
+    @Input() accounts: Array<Account>;
 
-    @Input('accounts') _accounts: Array<Account>;
+    @Output() delete = new EventEmitter<Number>();
 
-    @Output('delete') delete = new EventEmitter<Number>();
+    constructor() {
+        console.log(this.accounts);
+    }
 
     private _remove(index: number): void {
         this.delete.emit(index);

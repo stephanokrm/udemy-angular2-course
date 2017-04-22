@@ -2,7 +2,7 @@
     <h1>Personal finance</h1>
 
     <h2>Your accounts</h2>
-    <app-account-list [accounts]="_accounts"></app-account-list>
+    <app-account-list [accounts]="accounts" (delete)="removeAcc($event)"></app-account-list>
 
     <div class="row">
         <form class="col-md-6">
