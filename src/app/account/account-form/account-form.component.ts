@@ -1,16 +1,26 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
+import {Account} from '../account';
 
 @Component({
     selector: 'app-account-form',
     templateUrl: './account-form.component.html',
     styleUrls: ['./account-form.component.css']
 })
-export class AccountFormComponent implements OnInit {
+export class AccountFormComponent {
 
-    constructor() {
-    }
+    @Output() store = new EventEmitter<Account>();
 
-    ngOnInit() {
+    private _store(title: any, description: any, balance: any) {
+        const account: Account = new Account(
+            0,
+            title.value,
+            description.value,
+            balance.value
+        );
+        this.store.emit(account);
+        title.value = '';
+        description.value = '';
+        balance.value = 0;
     }
 
 }

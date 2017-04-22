@@ -9,14 +9,10 @@ import {Account} from '../account';
 export class AccountListComponent {
     @Input() accounts: Array<Account>;
 
-    @Output() delete = new EventEmitter<Number>();
+    @Output() destroy = new EventEmitter<Number>();
 
-    constructor() {
-        console.log(this.accounts);
-    }
-
-    private _remove(index: number): void {
-        this.delete.emit(index);
+    private _destroy(index: number): void {
+        this.destroy.emit(index);
     }
 
 }

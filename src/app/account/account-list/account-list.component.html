@@ -1,16 +1,14 @@
 <div class="row" *ngIf="accounts.length == 0">
     <div class="alert alert-info"><strong>No accounts yet?</strong> Please add it...</div>
 </div>
-<div class="row">
-    <div class="acc col-md-12" *ngFor="let acc of accounts, let i = index">
-        <h2 class="title">{{acc.id}} ({{acc.title}})</h2>
-        <p>{{acc.description}}</p>
-        <p>Balance: <strong class="lead">{{acc.balance}}</strong></p>
+<div class="row" *ngIf="accounts.length > 0">
+    <div class="acc col-md-12" *ngFor="let account of accounts">
+        <h2 class="title">{{account.id}} ({{account.title}})</h2>
+        <p>{{account.description}}</p>
+        <p>Balance: <strong class="lead">{{account.balance}}</strong></p>
         <div class="row">
             <div class="col-md-3">
-                <button class="btn btn-danger" (click)="_remove(i)">Delete</button>
-                <!--<button class="btn btn-primary" (click)="select(i)">{{_selected[i] ? 'Deselect' : 'Select'}}-->
-                <!--</button>-->
+                <button class="btn btn-danger" (click)="_destroy(index)">Delete</button>
             </div>
         </div>
     </div>

@@ -11,9 +11,9 @@ export class AppComponent {
     accounts: Array<Account> = [
         {
             id: 1,
-            title: 'Bank Xyz',
-            description: 'This is my main bank account.',
-            balance: 501.2
+            title: 'xxx Bank',
+            description: 'Main bank account.',
+            balance: 567
         },
         {
             id: 2,
@@ -23,19 +23,14 @@ export class AppComponent {
         }
     ];
 
-    private _nextId = 3;
+    private nextId = 3;
 
-    private createAcc(titleEl: any, descEl: any, balEl: any): void {
-        // this.accounts.push(new Account(this._nextId, titleEl.value, descEl.value, balEl.value));
-        // this._selected.push(false);
-        // this._nextId++;
-
-        titleEl.value = '';
-        descEl.value = '';
-        balEl.value = 0;
+    private storeAccount(account: Account): void {
+        account.id = this.nextId++;
+        this.accounts.push(account);
     }
 
-    private removeAcc(index: number): void {
+    private destroyAccount(index: number): void {
         this.accounts.splice(index, 1);
     }
 }
