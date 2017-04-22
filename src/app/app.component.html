@@ -2,5 +2,5 @@
     <h1>Personal finance</h1>
     <h2>Your accounts</h2>
     <app-account-list [accounts]="accounts" (destroy)="destroyAccount($event)"></app-account-list>
-    <app-account-form (store)="storeAccount($event)"></app-account-form>
+    <app-account-form [error]="createAccountError" (store)="storeAccount($event)"></app-account-form>
 </div>
